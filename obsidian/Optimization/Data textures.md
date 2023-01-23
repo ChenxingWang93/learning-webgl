@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/54701606/how-to-do-batching-without-ubos/54720138#54720138

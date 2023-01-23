@@ -1,0 +1,154 @@
+{
+  "main": {
+    "id": "0d2bfb6f03b02e8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "533758a2e3a59e49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "60f6c6d084198ced",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "84598fc2c8ee6e8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "151b5833e7feb22a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62e9c5c5b69dcac2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "66420df2eee95c5a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "multiplyManyMatrix3",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e1d454380379a6d0",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "532c9057dba4595f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4bbd7862f3b65664",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62233b8c7c4cfc53",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "776818aceca5cbfe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8f3cd3eb06b81d11",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b8b01a5aa1b08ffa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "62e9c5c5b69dcac2",
+  "lastOpenFiles": [
+    "First steps/Hello world WebGL.md",
+    "First steps/GLSL.md",
+    "First steps/Fragment shader.md",
+    "Transformations/3D Transformations.md",
+    "Transformations/2D Transformations.md",
+    "Transformations/Nesting.md",
+    "Transformations/Matrix operations in JavaScript.md",
+    "Transformations/Local coordinates.md",
+    "Transformations/Introduction to transformations.md",
+    "Transformations/Depth buffer.md"
+  ]
+}
