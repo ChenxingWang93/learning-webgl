@@ -108,7 +108,7 @@ let transformation = orthographic(left, right, bottom, top, near, far);
 
 # 3D perspective (WIP)
 
-Working in 3D with perspective is somewhat more complex, since we have to take into account that the farther away an object is, the smaller it is. We could [calculate it ourselves step by step](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-perspective.html), but as this is an operation present in all 3D applications, we can simply use the matrix already calculated:
+Working in 3D with perspective is somewhat more complex, since we have to take into account that the farther away an object is, the smaller it is. We could [calculate it ourselves step by step](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-perspective.html), but as this is an operation present in all 3D applications, we can simply use a pre-computed matrix:
 
 ```js
 function getClipSpaceMatrix4(fieldOfViewInRadians, aspect, near, far) {
@@ -125,5 +125,17 @@ function getClipSpaceMatrix4(fieldOfViewInRadians, aspect, near, far) {
 }
 ```
 
+This matrix does the following: 
+
+>Asumes that there is a camera at the origin $(0, 0, 0)$ looking at -Z. 
+
+>Defines two planes: `zNear` and `zFar`, which are respectively mapped to -1 and +1 of the $Z$ coordinate of the **clip space**. 
+
+>Maps the horizontal and vertical limits of the **field of view** to **clip space** -1 and +1 in $X$ and $Y$ respectively.
+
+>Copies the $Z$ value of each vertex into the 4th value of `gl_Position`. This is because WebGL automatically divides $X$ and $Y$ by this value, thus creating the illusion that objects that are far away in $Z$ are smaller.
+
 
 <iframe class="webgl_example " style="width: 400px; height: 600px;" src="https://webgl2fundamentals.org/webgl/frustum-diagram.html"></iframe>
+
+>The truncated piramid geometry formed by these two planes and the **field of view** is called **frustum**, and represents the limits of the **clip space** in the 3D space. Only the objects within the **frustum** will be rendered in the **clip space**.
