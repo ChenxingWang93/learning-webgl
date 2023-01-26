@@ -60,7 +60,7 @@ void main() {
 
 # 3D orthogonal
 
-When working in orthogonal 3D we can do exactly the same. The only difference is that the projection matrix to clip space is 4x4. For the `depth` we can use an arbitrary value: in the following example it will be `400px`.
+When working in orthogonal 3D we can do exactly the same. The only difference is that the projection matrix to clip space is 4x4. For the `depth` we can use an arbitrary value: in the following example it will be `400px`. This means that the visible objects need to have a $Z$ between +400px and -400px to be visible (as this will be mapped to +1 and -1 in the $Z$ of the **clip space**).
 
 ```js
 function getClipSpaceMatrix4() {
@@ -78,7 +78,7 @@ function getClipSpaceMatrix4() {
 }
 ```
 
-This function is not usually the case in most math libraries. Instead, there is usually a function called **ortho** or **orthographic** which is more complete:
+This simple function is not what we will find in most math libraries. Instead, there is usually a function called **ortho** or **orthographic** which is a bit more complete, allowing us to easily define the limits of the **clip space**:
 
 ```js
 function orthographic(left, right, bottom, top, near, far) {  
@@ -93,7 +93,7 @@ function orthographic(left, right, bottom, top, near, far) {
 }
 ```
 
-We can use it in exactly the same way as the other transformation matrices:
+We can use it in exactly the same way as the our simple matrix:
 
 ```js
 const left = 0;  
@@ -106,7 +106,7 @@ const far = -400;
 let transformation = orthographic(left, right, bottom, top, near, far);
 ```
 
-# 3D perspective (WIP)
+# 3D perspective
 
 Working in 3D with perspective is somewhat more complex, since we have to take into account that the farther away an object is, the smaller it is. We could [calculate it ourselves step by step](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-perspective.html), but as this is an operation present in all 3D applications, we can simply use a pre-computed matrix:
 
@@ -127,15 +127,19 @@ function getClipSpaceMatrix4(fieldOfViewInRadians, aspect, near, far) {
 
 This matrix does the following: 
 
+>Copies the $Z$ value of each vertex into the $W$ value of `gl_Position` (remember it's a `vec4`, composed by 4 values: $x,y,z,w$). The reason is that WebGL automatically divides all the values in `glPosition` by $W$, and by copying the $Z$ value there we create the illusion that objects that are far away in $Z$ are smaller.
+
 >Asumes that there is a camera at the origin $(0, 0, 0)$ looking at -Z. 
 
 >Defines two planes: `zNear` and `zFar`, which are respectively mapped to -1 and +1 of the $Z$ coordinate of the **clip space**. 
 
 >Maps the horizontal and vertical limits of the **field of view** to **clip space** -1 and +1 in $X$ and $Y$ respectively.
 
->Copies the $Z$ value of each vertex into the 4th value of `gl_Position`. This is because WebGL automatically divides $X$ and $Y$ by this value, thus creating the illusion that objects that are far away in $Z$ are smaller.
-
 
 <iframe class="webgl_example " style="width: 400px; height: 600px;" src="https://webgl2fundamentals.org/webgl/frustum-diagram.html"></iframe>
 
->The truncated piramid geometry formed by these two planes and the **field of view** is called **frustum**, and represents the limits of the **clip space** in the 3D space. Only the objects within the **frustum** will be rendered in the **clip space**.
+The truncated piramid geometry formed by these two planes and the **field of view** is called **frustum**, and represents the limits of the **clip space** in the 3D space. Only the objects within the **frustum** will be rendered in the **clip space**.
+
+```
+The frustum is a nice illustration of how our eyes work in the real world, but we have to keep in mind that the reality of WebGL is the opposite. WebGL doesn't understand perspective: it just simulates it by scaling down the geometry that is far away in Z. In other words, the farther away the world is from the viewer, the smaller it gets.
+```

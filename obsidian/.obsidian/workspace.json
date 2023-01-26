@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1e8a21bf05b85161",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Transformations/Cameras.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Transformations/Clip space projection.md",
+                "file": "Transformations/Cameras.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Transformations/Clip space projection.md",
+                "file": "Transformations/Cameras.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Transformations/Clip space projection.md"
+                "file": "Transformations/Cameras.md"
               }
             }
           }
@@ -146,17 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "60f6c6d084198ced",
+  "active": "1e8a21bf05b85161",
   "lastOpenFiles": [
+    "Transformations/3D Transformations.md",
+    "Transformations/Clip space projection.md",
+    "Transformations/Cameras.md",
+    "Transformations/2D Transformations.md",
+    "References.md",
     "First steps/Hello world WebGL.md",
     "First steps/GLSL.md",
     "First steps/Fragment shader.md",
-    "Transformations/3D Transformations.md",
-    "Transformations/2D Transformations.md",
     "Transformations/Nesting.md",
-    "Transformations/Matrix operations in JavaScript.md",
-    "Transformations/Local coordinates.md",
-    "Transformations/Introduction to transformations.md",
-    "Transformations/Depth buffer.md"
+    "Transformations/Matrix operations in JavaScript.md"
   ]
 }
