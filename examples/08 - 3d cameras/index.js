@@ -9,17 +9,17 @@ const globals = {
 
 const data = {
   fieldOfView: 40,
-  xTranslation: -172,
-  yTranslation: -36,
-  zTranslation: -334,
+  xTranslation: 0,
+  yTranslation: 0,
+  zTranslation: 0,
   xRotation: 3.84,
   yRotation: 2.29,
   zRotation: 0,
   xScale: 1,
   yScale: 1,
-  xTranslationCamera: 0,
-  yTranslationCamera: 0,
-  zTranslationCamera: 0,
+  xTranslationCamera: 100,
+  yTranslationCamera: 200,
+  zTranslationCamera: -200,
 };
 
 const camera = {
@@ -219,11 +219,6 @@ function updateScene() {
     data.yTranslation,
     data.zTranslation
   );
-  camera.setPosition(
-    data.xTranslationCamera,
-    data.yTranslationCamera,
-    data.zTranslationCamera
-  );
   draw();
 }
 
@@ -369,14 +364,19 @@ function draw() {
 function updateTransformation() {
   const { gl, program } = globals;
 
-  // Compute transformation
+  // Geometry transformation
 
   const { translation, rotationX, rotationY, rotationZ, scale } =
     transformation;
 
-  // Set camera position
+  // View matrix
 
-  const cameraTranslation = camera.translation;
+  const cameraTranslation = lookAt(
+    [data.xTranslationCamera, data.yTranslationCamera, data.zTranslationCamera],
+    [0, 0, 0]
+  );
+
+  const viewMatrix = invertMatrix4(cameraTranslation);
 
   // Set origin of transformations in -60, -60
 
@@ -392,6 +392,8 @@ function updateTransformation() {
     ...halfPositionTransform,
   ]);
 
+  // Projection matrix
+
   const fovInRadians = (data.fieldOfView * Math.PI) / 180;
   const aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
   const zNear = 1;
@@ -405,7 +407,7 @@ function updateTransformation() {
 
   const result = multiplyManyMatrix4(
     clipSpaceConversion,
-    cameraTranslation,
+    viewMatrix,
     translation,
     inverseHalfTranslationTransform,
     rotationX,
@@ -416,6 +418,7 @@ function updateTransformation() {
   );
 
   // Update transformation
+
   const location = gl.getUniformLocation(program, "u_transformation");
   gl.uniformMatrix4fv(location, false, result);
 }
@@ -452,6 +455,45 @@ function createShader(type, source) {
 async function getShaderSource(path) {
   const response = await fetch(path);
   return await response.text();
+}
+
+function lookAt(cameraPosition, target) {
+  const up = [0, 1, 0];
+  const zAxis = normalize(subtractVectors(cameraPosition, target));
+  const xAxis = normalize(cross(up, zAxis));
+  const yAxis = normalize(cross(zAxis, xAxis));
+  // prettier-ignore
+  return [
+		xAxis[0], xAxis[1], xAxis[2], 0,
+		yAxis[0], yAxis[1], yAxis[2], 0,
+		zAxis[0], zAxis[1], zAxis[2], 0,
+		cameraPosition[0],
+		cameraPosition[1],
+		cameraPosition[2],
+		1,
+	];
+}
+
+function normalize(v) {
+  var length = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+  // make sure we don't divide by 0.
+  if (length > 0.00001) {
+    return [v[0] / length, v[1] / length, v[2] / length];
+  } else {
+    return [0, 0, 0];
+  }
+}
+
+function subtractVectors(a, b) {
+  return [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+}
+
+function cross(a, b) {
+  return [
+    a[1] * b[2] - a[2] * b[1],
+    a[2] * b[0] - a[0] * b[2],
+    a[0] * b[1] - a[1] * b[0],
+  ];
 }
 
 function getClipSpaceMatrix4Perspective(

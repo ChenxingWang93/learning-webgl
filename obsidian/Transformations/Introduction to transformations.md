@@ -31,3 +31,15 @@ Its fundamental advantage is that we can express any transformation (position, r
 >Matrices in WebGL (and OpenGL) are different from mathematical matrices. For example, in WebGL a 2d translation matrix in WebGL and in mathematics are like this, respectively:
 >
 >$\begin{bmatrix} 1 & 0 & 0 \\  0 &  1 &  0 \\  t_x &   t_y &  1 \end{bmatrix}$ $\begin{bmatrix} 1 & 0 & t_x \\  0 &  1 &  t_y \\  0 &   0 &  1 \end{bmatrix}$
+
+>The most common matrices in graphics usually have a standard name:
+>
+>>**World matrix / Model matrix**: the transformation of an object in world space; that is, applying the transformation of all the [[Nesting|parents]].
+>
+>>**Local matrix**: the transformation of an object without having the transformation of the [[Nesting|parent]] into account.
+>
+>>**Camera matrix**: the transformation of the [[Cameras|camera]] in the world. In other words: the **world matrix** for the camera.
+>
+>>**View matrix**: the inverse of the **camera matrix**. It's [[Cameras|applied to the scene]] to simulate the transformation of the camera.
+>
+>>**Projection matrix**: a matrix that makes the conversion from a scene space into [[Clip space projection|clip space]].
