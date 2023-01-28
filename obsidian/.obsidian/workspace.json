@@ -13,14 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Transformations/Clip space projection.md",
+                "file": "Transformations/Operations in JavaScript.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1e8a21bf05b85161",
+            "id": "38a3d33c012d2346",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -159,17 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1e8a21bf05b85161",
+  "active": "38a3d33c012d2346",
   "lastOpenFiles": [
-    "Transformations/3D Transformations.md",
-    "Transformations/Clip space projection.md",
+    "Transformations/Operations in JavaScript.md",
     "Transformations/Cameras.md",
+    "Transformations/Clip space projection.md",
+    "Transformations/3D Transformations.md",
     "Transformations/2D Transformations.md",
+    "Transformations/Depth buffer.md",
     "References.md",
     "First steps/Hello world WebGL.md",
     "First steps/GLSL.md",
-    "First steps/Fragment shader.md",
-    "Transformations/Nesting.md",
-    "Transformations/Matrix operations in JavaScript.md"
+    "First steps/Fragment shader.md"
   ]
 }

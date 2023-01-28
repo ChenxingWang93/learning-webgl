@@ -124,7 +124,7 @@ void main() {
 }
 ```
 
-Now we just have to make sure to calculate the total transformation with the [[Matrix operations in JavaScript#Matrix operations in JavaScript#Matrix product 4x4|matrix product]] and update the `uniforms` before rendering. Remember that the transformations are performed from right to left (the same way as it would happen in WebGL). That is to say, the order is: `scale`, `rotationZ`, `rotationY`, `rotationX` and finally `translation`.
+Now we just have to make sure to calculate the total transformation with the [[Operations in JavaScript#Matrix operations in JavaScript#Matrix product 4x4|matrix product]] and update the `uniforms` before rendering. Remember that the transformations are performed from right to left (the same way as it would happen in WebGL). That is to say, the order is: `scale`, `rotationZ`, `rotationY`, `rotationX` and finally `translation`.
 
 ```js
 // Compute transformation

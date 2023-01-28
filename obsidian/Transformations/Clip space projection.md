@@ -1,6 +1,6 @@
 # 2D
 
-In the [[Hello world WebGL#From clip space to pixels|webGL basics article]] we saw a technique to be able to pass data to the shader in pixels instead of **clip space** units. We could apply all the transformations seen above. However, as these operations are always the same, it is best to calculate the matrix and hardcode it ourselves. The result for 2D is as follows:
+In the [[Hello world WebGL#From clip space to pixels|webGL basics article]] we saw a technique to be able to pass data to the shader in pixels instead of **clip space** units. We could apply all the transformations seen above. However, as these operations are always the same, it is best to calculate the matrix and hardcode it ourselves. This is sometimes called **projection matrix** and looks like this:
 
 ```js
 function getClipSpaceMatrix3() {

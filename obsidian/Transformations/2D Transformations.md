@@ -80,7 +80,7 @@ void main() {
 }
 ```
 
-Now we only have to make sure to calculate the total transformation with the [[Matrix operations in JavaScript#3x3 matrix product|matrix product]] and update the `uniforms` before rendering. Remember that the transformations are performed from right to left (the same way as it would happen in WebGL). That is to say, the order is: `scale`, `rotation` and finally `translation`.
+Now we only have to make sure to calculate the total transformation with the [[Operations in JavaScript#3x3 matrix product|matrix product]] and update the `uniforms` before rendering. Remember that the transformations are performed from right to left (the same way as it would happen in WebGL). That is to say, the order is: `scale`, `rotation` and finally `translation`.
 
 ```js
 // Compute transformation
