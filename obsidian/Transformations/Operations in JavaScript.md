@@ -9,7 +9,7 @@ function subtractVectors(a, b) {
 
 # Vector cross product
 
->The **cross product** of two vectors results in a perpendicular vector whose length ranges from 1 (if the two are perpendicular) and 0 (if they are parallel). 
+>The **cross product** of two vectors results in a vector that is perpendicular vector whose length ranges from 1 (if the two are perpendicular) and 0 (if they are parallel). 
 
 ```js
 function cross(a, b) {
@@ -18,6 +18,12 @@ function cross(a, b) {
 	a[0] * b[1] - a[1] * b[0]];
 }
 ```
+
+# Vector dot product
+
+>The **dot product** of two vectors results in a number between -1 (if the they have the same direction) and 1 (if they have opposite directions). If they are perpendicular, the result is 0.
+
+
 
 # Vector normalization
 
@@ -125,6 +131,19 @@ function invertMatrix3(matrix) {
   return matrix;
 }
 
+```
+
+# Matrix transpose 4x4
+
+```js
+function transposeMatrix4(m) {
+	return [
+		m[0], m[4], m[8], m[12],
+		m[1], m[5], m[9], m[13],
+		m[2], m[6], m[10], m[14],
+		m[3], m[7], m[11], m[15],
+	];
+}
 ```
 
 # Matrix product 4x4
