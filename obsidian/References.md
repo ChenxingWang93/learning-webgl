@@ -3,7 +3,11 @@ TOP QUALITY:
 https://webgl2fundamentals.org/
 https://www.youtube.com/watch?v=s3k8Od9lZBE&list=PLMinhigDWz6emRKVkVIEAaePW7vtIkaIF
 https://www.youtube.com/watch?v=Ua6iRXPQwD8&list=PLv8Ddw9K0JPiTHLMQw31Yh4qyTAcHRnJx
+https://www.youtube.com/watch?v=bP7_FeP9kU4&list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK&index=1
+https://www.youtube.com/watch?v=kB0ZVUrI4Aw&list=PLjcVFFANLS5zH_PeKC6I8p0Pt1hzph_rt
 https://simondev.teachable.com/p/glsl-shaders-from-scratch
+https://www.udemy.com/course/webgl-internals/
+
 
 REST:
 

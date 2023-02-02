@@ -8,19 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f02fbf98a498fe8b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lights/Directional lights.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c85ca171bcc419f2",
+            "id": "fe6365d24c866705",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -30,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "07a0716df3f0a587",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Transformations/Operations in JavaScript.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -172,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c85ca171bcc419f2",
+  "active": "fe6365d24c866705",
   "lastOpenFiles": [
-    "Lights/Directional lights.md",
+    "Misc/Ambient occlusion.md",
     "Lights/Point lights.md",
+    "References.md",
+    "Lights/Specularity.md",
+    "Lights/Directional lights.md",
+    "Transformations/2D Transformations.md",
     "Transformations/Cameras.md",
     "Transformations/Operations in JavaScript.md",
     "Transformations/Nesting.md",
-    "Transformations/2D Transformations.md",
-    "Transformations/Depth buffer.md",
-    "Transformations/Introduction to transformations.md",
-    "Transformations/Clip space projection.md",
-    "Textures/Introduction to textures.md"
+    "Transformations/Depth buffer.md"
   ]
 }
