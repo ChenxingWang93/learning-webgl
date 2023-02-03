@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "601efa1821bce335",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lights/Spot lights.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lights/Point lights.md",
+                "file": "Lights/Spot lights.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lights/Point lights.md",
+                "file": "Lights/Spot lights.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lights/Point lights.md"
+                "file": "Lights/Spot lights.md"
               }
             }
           }
@@ -147,10 +160,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fe6365d24c866705",
+  "active": "601efa1821bce335",
   "lastOpenFiles": [
-    "Misc/Ambient occlusion.md",
     "Lights/Point lights.md",
+    "Misc/Ambient occlusion.md",
     "References.md",
     "Lights/Specularity.md",
     "Lights/Directional lights.md",
