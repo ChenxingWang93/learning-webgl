@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "First steps/Shaders.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e2601147798c5fdf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VAOs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "vao",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "VAOs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "VAOs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md"
+                "file": "VAOs.md"
               }
             }
           }
@@ -147,17 +160,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1a0238ec1dea9419",
+  "active": "e2601147798c5fdf",
   "lastOpenFiles": [
-    "References.md",
+    "First steps/Shaders.md",
+    "First steps/Hello world WebGL.md",
     "Scenes/Drawing multiple objects.md",
+    "References.md",
     "First steps/GLSL.md",
     "GLSL/Functions.md",
     "Lights/Spot lights.md",
     "Lights/Point lights.md",
     "Helpers/Operations in JavaScript.md",
-    "Lights/Directional lights.md",
-    "Misc/Ambient occlusion.md",
-    "Lights/Specularity.md"
+    "Lights/Directional lights.md"
   ]
 }
