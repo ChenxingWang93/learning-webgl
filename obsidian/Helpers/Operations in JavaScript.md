@@ -21,7 +21,7 @@ function cross(a, b) {
 
 # Vector dot product
 
->The **dot product** of two vectors results in a number between -1 (if the they have the same direction) and 1 (if they have opposite directions). If they are perpendicular, the result is 0.
+>The **dot product** of two vectors results in a number between -1 (if the they have the same direction) and 1 (if they have opposite directions). If they are perpendicular, the result is 0. In other words, is the **cosine** of the angle that they form.
 
 
 

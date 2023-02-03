@@ -14,6 +14,11 @@ uniform float u_shininess;
 uniform vec3 u_lightColor;
 uniform vec3 u_specularColor;
 
+// Spotlight limit
+uniform vec3 u_lightDirection;
+uniform float u_innerLimit;
+uniform float u_outerLimit;
+
 // We need to declare an output for the fragment shader  
 out vec4 outColor;
 
@@ -28,12 +33,16 @@ void main() {
   vec3 unitSurfaceToView = normalize(v_surfaceToView);
   vec3 halfVector = normalize(unitSurfaceToLight + unitSurfaceToView);
 
-  // compute the light
-  float light = dot(normal, unitSurfaceToLight);
+  // compute light and specularity
 
-  // Compute specularity
+  float dotFromDirection = dot(unitSurfaceToLight, -u_lightDirection);
+
+  float inLight = smoothstep(u_outerLimit, u_innerLimit, dotFromDirection);
+
+  float light = inLight * dot(normal, unitSurfaceToLight);
   float rawSpecular = max(0.0, dot(normal, halfVector));
   float specular = pow(rawSpecular, u_shininess);
+  float limitedSpecular = inLight * specular;
 
   // Apply color
   outColor = u_color;
@@ -43,5 +52,5 @@ void main() {
   outColor.rgb *= light * u_lightColor;
 
   // Just add in the specular
-  outColor.rgb += specular * u_specularColor;
+  outColor.rgb += limitedSpecular * u_specularColor;
 }

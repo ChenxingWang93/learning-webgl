@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "efba7b01c5460c38",
+        "id": "8762626450f7a171",
         "type": "tabs",
         "children": [
           {
-            "id": "fe6365d24c866705",
+            "id": "1a0238ec1dea9419",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lights/Point lights.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "601efa1821bce335",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lights/Spot lights.md",
+                "file": "Scenes/Drawing multiple objects.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "multiplyManyMatrix3",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lights/Spot lights.md",
+                "file": "Scenes/Drawing multiple objects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lights/Spot lights.md",
+                "file": "Scenes/Drawing multiple objects.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lights/Spot lights.md"
+                "file": "Scenes/Drawing multiple objects.md"
               }
             }
           }
@@ -160,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "601efa1821bce335",
+  "active": "1a0238ec1dea9419",
   "lastOpenFiles": [
-    "Lights/Point lights.md",
-    "Misc/Ambient occlusion.md",
     "References.md",
-    "Lights/Specularity.md",
+    "Scenes/Drawing multiple objects.md",
+    "First steps/GLSL.md",
+    "GLSL/Functions.md",
+    "Lights/Spot lights.md",
+    "Lights/Point lights.md",
+    "Helpers/Operations in JavaScript.md",
     "Lights/Directional lights.md",
-    "Transformations/2D Transformations.md",
-    "Transformations/Cameras.md",
-    "Transformations/Operations in JavaScript.md",
-    "Transformations/Nesting.md",
-    "Transformations/Depth buffer.md"
+    "Misc/Ambient occlusion.md",
+    "Lights/Specularity.md"
   ]
 }

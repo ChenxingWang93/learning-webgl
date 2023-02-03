@@ -1,10 +1,13 @@
 The concept of point lights is very similar to how lightbulbs work in the real world. Light is casted from a point and emited radially. A very easy way to make this is to compute the [[Operations in JavaScript#Vector dot product|dot product]] between the normal vector and the vector pointing to the light. If they are parallel, the face is facing the light and it gets brighter: if they are different, the face is looking away and it gets darker.
 
->If we wanted to make this more realistic, we could easily take into account the distance of the pixel to the light, but here we will keep things as simple as possible.
+This is very similar to how [[Directional lights|directional lights]] work, but in that case the dot product is the same for each pixel of the face, whereas in this case the result is different for each pixel (see diagram below).
+
 
 <iframe class="webgl_example noborder" style="width: 500px; height: 400px;" src="https://webgl2fundamentals.org/webgl/lessons/resources/point-lighting.html"></iframe>
 
-First we will create our **vertex shader**. Here we will simply compute the vector from this vertex (`a_position`) to the point light (`v_surfaceToLight`). First, we pass 2 uniforms: 
+>If we wanted to make this more realistic, we could easily take into account the distance of the pixel to the light, but here we will keep things as simple as possible.
+
+First we will create our **vertex shader**. Here we will simply compute the vector from this vertex (`a_position`) to the point light (`v_surfaceToLight`). We need to pass 2 uniforms: 
 
 - The global point light position (`u_lightWorldPosition`) 
 - The global transformation of the geometry / **world matrix** (`u_world`).
@@ -204,6 +207,14 @@ void main() {
   // Just add in the specular
   outColor.rgb += specular * u_specularColor;
 }
+```
+
+This code has a potential problem: the use of an `if`. It is not recommended to use conditional in shaders because they can affect performance heavily. In this case we want to force the specularity to be 0 or above, and we can do this without a conditional using the `max` function. Not only is this more efficient, but also cleaner.
+
+```c
+  // Compute specularity
+  float rawSpecular = max(0.0, dot(normal, halfVector));
+  float specular = pow(rawSpecular, u_shininess);
 ```
 
 Of course, all the **uniforms** are passed as seen in other lessons. For instance, we can pass the global position of the camera like this:
