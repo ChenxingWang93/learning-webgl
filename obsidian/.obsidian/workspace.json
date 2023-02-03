@@ -37,7 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "Scenes/VAOs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "abac05d1d27fbfe4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Scenes/Scene graphs.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "uniformMatrix4fv",
+                "query": "vao",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "Scenes/VAOs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md",
+                "file": "Scenes/VAOs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scenes/Drawing multiple objects.md"
+                "file": "Scenes/VAOs.md"
               }
             }
           }
@@ -175,14 +187,14 @@
   "active": "b4dd456c894e11b6",
   "lastOpenFiles": [
     "Scenes/Transparent objects.md",
+    "Scenes/Drawing multiple objects.md",
+    "Scenes/VAOs.md",
+    "Scenes/Scene graphs.md",
     "First steps/Vertex shader.md",
     "Transformations/Local coordinates.md",
     "First steps/Hello world WebGL.md",
-    "VAOs.md",
     "First steps/Shaders.md",
-    "Scenes/Drawing multiple objects.md",
     "References.md",
-    "First steps/GLSL.md",
-    "GLSL/Functions.md"
+    "First steps/GLSL.md"
   ]
 }

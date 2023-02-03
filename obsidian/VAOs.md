@@ -1,1 +1,0 @@
-https://medium.com/@david.komer/dude-wheres-my-data-vao-s-in-webgl-896631783895

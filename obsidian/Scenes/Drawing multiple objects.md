@@ -30,3 +30,4 @@ ___
 
 This is it. It is up to us to organize the code to make all of this. The only caveat is that some things (like getting the texture data) might happen asynchronously because we need to wait for them to download from the server.
 
+>It's a good practice avoiding useless WebGL function calls. This means that if we set an **uniform** that doesn't change, we just need to set it once. The same goes for `gl.useProgram` if we are already using that program, `gl.bindVertexArray` if we are already using that [[VAOs|VAO]], etc.
