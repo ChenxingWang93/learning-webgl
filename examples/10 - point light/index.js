@@ -8,13 +8,15 @@ const globals = {
 };
 
 const data = {
+  shininess: 100,
+  lightColor: [1, 1, 1],
   fieldOfView: 40,
   xTranslation: 0,
-  yTranslation: 0,
+  yTranslation: -24,
   zTranslation: 0,
-  xRotation: 4,
+  xRotation: 3.5,
   yRotation: 4,
-  zRotation: 1.5,
+  zRotation: 0.3,
   xScale: 1,
   yScale: 1,
   xTranslationCamera: 100,
@@ -108,6 +110,18 @@ function setupControls() {
     .onChange(() => {
       updateScene();
     });
+
+  gui
+    .add(data, "shininess")
+    .min(1)
+    .max(300)
+    .onChange(() => {
+      updateScene();
+    });
+
+  gui.addColor(data, "lightColor").onChange(() => {
+    updateScene();
+  });
 
   gui
     .add(data, "xTranslation")
@@ -252,21 +266,34 @@ function createFShape() {
   setupPositionBufferAttribute();
 
   setupNormalBufferAttribute();
-
-  setupLight();
 }
 
 function setupLight() {
   const { gl, program } = globals;
 
+  const shininessLocation = gl.getUniformLocation(program, "u_shininess");
   const colorLocation = gl.getUniformLocation(program, "u_color");
   const lightLocation = gl.getUniformLocation(program, "u_lightWorldPosition");
+  const lightColorLocation = gl.getUniformLocation(program, "u_lightColor");
+  const specularColorLocation = gl.getUniformLocation(
+    program,
+    "u_specularColor"
+  );
 
   // Set the color to use
   gl.uniform4fv(colorLocation, [0.2, 1, 0.2, 1]); // green
 
   // set the light direction.
-  gl.uniform3fv(lightLocation, normalize([0, 0, 0]));
+  gl.uniform3fv(lightLocation, [0, 0, 0]);
+
+  // set the shininess
+  gl.uniform1f(shininessLocation, data.shininess);
+
+  // set the light color
+  gl.uniform3fv(lightColorLocation, normalize(data.lightColor));
+
+  // set the specular color
+  gl.uniform3fv(specularColorLocation, normalize(data.lightColor));
 }
 
 function setupNormalBufferAttribute() {
@@ -349,6 +376,8 @@ function draw() {
   // Update the transformation of the geometry
   updateTransformation();
 
+  setupLight();
+
   // Bind the attribute/buffer set we want.
   gl.bindVertexArray(vao);
 
@@ -368,12 +397,24 @@ function updateTransformation() {
 
   // View matrix
 
-  const cameraTranslation = lookAt(
-    [data.xTranslationCamera, data.yTranslationCamera, data.zTranslationCamera],
-    [0, 0, 0]
-  );
+  const cameraPosition = [
+    data.xTranslationCamera,
+    data.yTranslationCamera,
+    data.zTranslationCamera,
+  ];
+
+  const cameraTranslation = lookAt(cameraPosition, [0, 0, 0]);
 
   const viewMatrix = invertMatrix4(cameraTranslation);
+
+  // set the camera/view position for
+
+  var cameraUniformLocation = gl.getUniformLocation(
+    program,
+    "u_viewWorldPosition"
+  );
+
+  gl.uniform3fv(cameraUniformLocation, cameraPosition);
 
   // Set origin of transformations in -60, -60
 

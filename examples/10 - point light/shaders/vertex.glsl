@@ -5,7 +5,8 @@ in vec4 a_position;
 in vec3 a_normal;
 
 // position of the point light in the real world
-uniform vec3 u_lightWorldPosition; 
+uniform vec3 u_lightWorldPosition;
+uniform vec3 u_viewWorldPosition; 
 
 // World matrices
 uniform mat4 u_world;
@@ -15,8 +16,11 @@ uniform mat4 u_worldInverseTranspose;
 // varying: normal data
 out vec3 v_normal;
 
-// varying: distance of this vertex to point light
+// varying: vector from the vertex to the point light
 out vec3 v_surfaceToLight;
+
+// varying: vector from the vertex to the camera
+out vec3 v_surfaceToView;
 
 // All shaders have a main function
 void main() {
@@ -33,4 +37,8 @@ void main() {
     // compute the vector of the surface to the light
     // and pass it to the fragment shader
     v_surfaceToLight = u_lightWorldPosition - surfaceWorldPosition;
+
+    // compute the vector of the surface to the view/camera
+    // and pass it to the fragment shader
+    v_surfaceToView = u_viewWorldPosition - surfaceWorldPosition;
 }

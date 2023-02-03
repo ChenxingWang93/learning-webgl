@@ -94,3 +94,135 @@ This is already great, but in the real world, glossy surfaces reflect the source
 
 >Checking if the normal vector and the half vector are parallel is super simple with the [[Operations in JavaScript#Vector dot product|dot product]]!
 
+So in our vertex shader we will simply take the global position of the camera as an uniform and compute the vector it makes with the global position of the surface:
+
+```c
+#version 300 es
+  
+// Vertex coordinates and normals
+in vec4 a_position;
+in vec3 a_normal;
+  
+// position of the point light in the real world
+uniform vec3 u_lightWorldPosition;
+uniform vec3 u_viewWorldPosition;
+  
+// World matrices
+uniform mat4 u_world;
+uniform mat4 u_worldViewProjection;
+uniform mat4 u_worldInverseTranspose;
+  
+// varying: normal data
+out vec3 v_normal;
+  
+// varying: vector from the vertex to the point light
+out vec3 v_surfaceToLight;
+  
+// varying: vector from the vertex to the camera
+out vec3 v_surfaceToView;
+  
+// All shaders have a main function
+void main() {
+    // gl_Position is a special variable a vertex shader
+    // is responsible for setting
+    gl_Position = u_worldViewProjection * a_position;
+  
+    // Pass normal to fragment shader
+    v_normal = mat3(u_worldInverseTranspose) * a_normal;
+  
+    // compute the world position of the surface
+    vec3 surfaceWorldPosition = (u_world * a_position).xyz;
+  
+    // compute the vector of the surface to the light
+    // and pass it to the fragment shader
+    v_surfaceToLight = u_lightWorldPosition - surfaceWorldPosition;
+  
+    // compute the vector of the surface to the view/camera
+    // and pass it to the fragment shader
+    v_surfaceToView = u_viewWorldPosition - surfaceWorldPosition;
+}
+```
+
+And in the fragment shader we will take it and compute the **specular reflection** as the dot product of the halfVector and the normal vector of the surface. We can't forget to normalize everything to make everything unit vectors! There are three things to take into account:
+
+>We are getting a light color and specular color as **uniform** from JS.
+
+>To compute the specular light, we are aplying a power (`pow`) operation controlled by a **glosiness** factor that is passed as an **uniform**. The reason is that this way the specular reflex will behave in a exponential way, which is way more similar to the way this reflex works in the real world (see diagram below).
+
+<iframe style="width: 300px; height: 300px;" src="https://webgl2fundamentals.org/webgl/lessons/resources/power-graph.html"></iframe>
+
+>Because we are aplying a power operation, we need to make sure that the base is positive. The reason is that trying to elevate a negative number to a decimal exponent result in an **imaginary number**, and the result will look super weird. 
+
+```c
+#version 300 es
+
+// fragment shaders don't have a default precision so we need  
+// to pick one. highp is a good default. It means "high precision"  
+precision highp float;
+  
+// Passed in and varied from the vertex shader.
+in vec3 v_normal;
+in vec3 v_surfaceToLight;
+in vec3 v_surfaceToView;
+  
+uniform vec4 u_color;
+uniform float u_shininess
+uniform vec3 u_lightColor;
+uniform vec3 u_specularColor;
+  
+// We need to declare an output for the fragment shader 
+out vec4 outColor;
+  
+void main() {
+  
+  // Varyings that are unit verctos are interpolate
+  // so they will not be a unit vector. Normalizing them
+  // will make them unit vectors again
+  vec3 normal = normalize(v_normal);
+  vec3 unitSurfaceToLight = normalize(v_surfaceToLight);
+  
+  vec3 unitSurfaceToView = normalize(v_surfaceToView);
+  vec3 halfVector = normalize(unitSurfaceToLight + unitSurfaceToView);
+  
+  // compute the light
+  float light = dot(normal, unitSurfaceToLight);
+  
+  // Compute specularity
+  float specular = 0.0;
+  float rawSpecular = dot(normal, halfVector);
+  if(rawSpecular > 0.0) {
+    specular = pow(rawSpecular, u_shininess);
+  }
+
+  // Apply color
+  outColor = u_color;
+  
+  // Lets multiply just the color portion (not the alpha)
+  // by the light
+  outColor.rgb *= light * u_lightColor;
+  
+  // Just add in the specular
+  outColor.rgb += specular * u_specularColor;
+}
+```
+
+Of course, all the **uniforms** are passed as seen in other lessons. For instance, we can pass the global position of the camera like this:
+
+```js
+  const cameraPosition = [
+    data.xTranslationCamera,
+    data.yTranslationCamera,
+    data.zTranslationCamera
+  ];
+  
+  const cameraTranslation = lookAt(cameraPosition, [0, 0, 0]);  
+
+  // set the camera/view position for
+  
+  var cameraUniformLocation = gl.getUniformLocation(
+    program,
+    "u_viewWorldPosition"
+  );
+  
+  gl.uniform3fv(cameraUniformLocation, cameraPosition);
+```
