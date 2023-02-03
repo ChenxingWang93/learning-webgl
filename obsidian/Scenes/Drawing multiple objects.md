@@ -19,9 +19,9 @@ ___
 
 - Clear and set the viewport and other global state (e.g. [[Depth buffer|depth testing]], [[Backface culling|culling]], etc).
 - For each thing we want to draw:
-	- Call `gl.useProgram` for the program that has the shaders of this thing.
-	- Bind the vertex array for the thing with `gl.bindVertexArray`.
-	- Set up the **uniforms** for the thing with:
+	- Call `gl.useProgram` for the program that has the shaders of this object.
+	- Bind the vertex array (**vao**) with `gl.bindVertexArray`.
+	- Update the **uniforms** that need to be updated with:
 		- `gl.uniformXXXXX` (e.g. `gl.uniform3fv`).
 		- `gl.activeTexture` and `gl.bindTexture` to assign textures to texture units.
 	- Call `gl.drawArrays` or `gl.drawElements`.

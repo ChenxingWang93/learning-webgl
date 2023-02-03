@@ -12,13 +12,21 @@ export class Renderer {
     this.setClipspaceToViewportConversion();
     this.clearCanvasAndZBuffer();
     for (const mesh of scene.children) {
+      camera.prepareToRender(this.gl);
+      mesh.prepareToRender(camera.matrix);
+      this.setupLights(scene, mesh);
       this.draw(mesh, camera);
     }
   }
 
-  draw(mesh, camera) {
-    camera.prepareToRender(this.gl);
-    mesh.prepareToRender(camera.matrix);
+  setupLights(scene, mesh) {
+    const { gl, program } = mesh.material;
+    for (const light of scene.lights) {
+      light.prepareToRender(gl, program);
+    }
+  }
+
+  draw(mesh) {
     const count = mesh.geometry.size;
     this.gl.drawArrays(this.primitiveType, this.offset, count);
   }

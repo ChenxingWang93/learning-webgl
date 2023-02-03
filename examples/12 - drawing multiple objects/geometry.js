@@ -5,6 +5,9 @@ export class FGeometry {
   gl;
   size = positionData.length / 3;
   attributes;
+  initialized = false;
+
+  center = [-20, -80, 0];
 
   constructor(gl) {
     this.gl = gl;
@@ -28,19 +31,35 @@ export class FGeometry {
     };
   }
 
+  getCenter() {
+    const [x, y, z] = this.center;
+    // prettier-ignore
+    return [
+      1, 0, 0, 0,  
+      0, 1, 0, 0, 
+      0, 0, 1, 0,
+      x, y, z, 1
+    ];
+  }
+
   prepareToRender() {
     this.gl.bindVertexArray(this.vao);
   }
 
   setupAttributes(material) {
+    if (this.initialized) return;
     const { gl, program } = material;
     this.createAndSelectVAO();
     this.setupAttribute(gl, program, "a_position");
+    this.setupAttribute(gl, program, "a_normal");
     this.deselectVAO();
+    this.initialized = true;
   }
 
   createAndSelectVAO() {
-    this.vao = this.gl.createVertexArray();
+    if (!this.vao) {
+      this.vao = this.gl.createVertexArray();
+    }
     this.gl.bindVertexArray(this.vao);
   }
 

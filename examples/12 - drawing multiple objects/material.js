@@ -3,8 +3,11 @@ export class Material {
   program;
   gl;
 
-  constructor(gl) {
+  color;
+
+  constructor(gl, color = [0.2, 1, 0.2, 1]) {
     this.gl = gl;
+    this.color = color;
     this.shaders = [
       [gl.VERTEX_SHADER, "./shaders/vertex.glsl"],
       [gl.FRAGMENT_SHADER, "./shaders/fragment.glsl"],
@@ -23,6 +26,7 @@ export class Material {
 
   prepareToRender() {
     this.gl.useProgram(this.program);
+    this.updateUniforms();
   }
 
   linkAndUseProgram() {
@@ -60,5 +64,11 @@ export class Material {
   async getShaderSource(path) {
     const response = await fetch(path);
     return await response.text();
+  }
+
+  updateUniforms() {
+    const location = this.gl.getUniformLocation(this.program, "u_color");
+    const [x, y, z] = this.color;
+    this.gl.uniform4f(location, x, y, z, 1);
   }
 }

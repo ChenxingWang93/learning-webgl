@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VAOs.md",
+                "file": "First steps/Vertex shader.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b4dd456c894e11b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Scenes/Drawing multiple objects.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -61,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "vao",
+                "query": "uniformMatrix4fv",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "VAOs.md",
+                "file": "Scenes/Drawing multiple objects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "VAOs.md",
+                "file": "Scenes/Drawing multiple objects.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "VAOs.md"
+                "file": "Scenes/Drawing multiple objects.md"
               }
             }
           }
@@ -160,17 +172,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e2601147798c5fdf",
+  "active": "b4dd456c894e11b6",
   "lastOpenFiles": [
-    "First steps/Shaders.md",
+    "Scenes/Transparent objects.md",
+    "First steps/Vertex shader.md",
+    "Transformations/Local coordinates.md",
     "First steps/Hello world WebGL.md",
+    "VAOs.md",
+    "First steps/Shaders.md",
     "Scenes/Drawing multiple objects.md",
     "References.md",
     "First steps/GLSL.md",
-    "GLSL/Functions.md",
-    "Lights/Spot lights.md",
-    "Lights/Point lights.md",
-    "Helpers/Operations in JavaScript.md",
-    "Lights/Directional lights.md"
+    "GLSL/Functions.md"
   ]
 }

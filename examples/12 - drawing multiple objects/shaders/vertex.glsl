@@ -1,21 +1,21 @@
 #version 300 es
 
-// An attribute will receive data from a buffer
+// Vertex coordinates and normals
 in vec4 a_position;
 
-// Color of each face
-in vec4 a_color;
+in vec3 a_normal;
+out vec3 v_normal;
+
+uniform vec4 u_color;
 out vec4 v_color;
 
-// Transformation matrix
-uniform mat4 u_transformation;
+// World matrices
+uniform mat4 u_worldViewProjection;
+uniform mat4 u_worldInverseTranspose;
 
-// All shaders have a main function
 void main() {
-    // gl_Position is a special variable a vertex shader
-    // is responsible for setting
-    gl_Position = u_transformation * a_position;
+    gl_Position = u_worldViewProjection * a_position;
 
-    // Pass color to fragment shader
-    v_color = a_color;
+    v_normal = mat3(u_worldInverseTranspose) * a_normal;
+    v_color = u_color;
 }

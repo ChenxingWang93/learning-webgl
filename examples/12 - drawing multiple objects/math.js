@@ -1,3 +1,13 @@
+export function normalize(v) {
+  var length = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+  // make sure we don't divide by 0.
+  if (length > 0.00001) {
+    return [v[0] / length, v[1] / length, v[2] / length];
+  } else {
+    return [0, 0, 0];
+  }
+}
+
 export function newTranslation({ x, y, z }) {
   // prettier-ignore
   return [
@@ -70,6 +80,27 @@ export function getClipSpaceMatrix4Perspective(
       0, 0, (near + far) * rangeInv, -1,
       0, 0, near * far * rangeInv * 2, 0
     ];
+}
+
+export function transposeMatrix4(m) {
+  return [
+    m[0],
+    m[4],
+    m[8],
+    m[12],
+    m[1],
+    m[5],
+    m[9],
+    m[13],
+    m[2],
+    m[6],
+    m[10],
+    m[14],
+    m[3],
+    m[7],
+    m[11],
+    m[15],
+  ];
 }
 
 export function multiplyManyMatrix4(...matrices) {
