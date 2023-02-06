@@ -20,7 +20,7 @@ await greenMaterial.init();
 const redMaterial = new Material(gl, [2, 0, 0]);
 await redMaterial.init();
 
-const yellowMaterial = new Material(gl, [2, 1, 0]);
+const yellowMaterial = new Material(gl, [1, 1, 0]);
 await yellowMaterial.init();
 
 const materials = [greenMaterial, redMaterial, yellowMaterial];
@@ -33,6 +33,7 @@ for (let i = 0; i < 10; i++) {
   let y = -100 + getRandomNumber(100);
   let z = -320 + getRandomNumber(100);
   mesh.position = { x, y, z };
+  mesh.scale = { x: 0.3, y: 0.3, z: 0.3 };
   x = (getRandomNumber(360) * Math.PI) / 180;
   y = (getRandomNumber(360) * Math.PI) / 180;
   z = (getRandomNumber(360) * Math.PI) / 180;

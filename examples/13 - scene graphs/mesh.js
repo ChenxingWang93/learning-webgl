@@ -1,6 +1,7 @@
 import {
   invertMatrix4,
   multiplyManyMatrix4,
+  multiplyMatrix4,
   newRotationX,
   newRotationY,
   newRotationZ,
@@ -12,9 +13,18 @@ import {
 export class Mesh {
   geometry;
   material;
+  parent;
 
   // prettier-ignore
   transformation = [
+    1, 0, 0, 0,  
+    0, 1, 0, 0, 
+    0, 0, 1, 0,
+    0, 0, 0, 1
+  ];
+
+  // prettier-ignore
+  localTransformation = [
     1, 0, 0, 0,  
     0, 1, 0, 0, 
     0, 0, 1, 0,
@@ -30,6 +40,10 @@ export class Mesh {
     this.geometry = geometry;
     this.material = material;
     geometry.setupAttributes(material);
+  }
+
+  addChild(mesh) {
+    mesh.parent = this;
   }
 
   prepareToRender(clipspaceMatrix) {
@@ -48,7 +62,7 @@ export class Mesh {
     const center = this.geometry.getCenter();
     const inverseCenter = invertMatrix4([...center]);
 
-    this.transformation = multiplyManyMatrix4(
+    this.localTransformation = multiplyManyMatrix4(
       translation,
       inverseCenter,
       rotationX,
@@ -57,6 +71,24 @@ export class Mesh {
       scale,
       center
     );
+
+    const parentTransforms = this.getParentLocalTransforms();
+    this.transformation = multiplyManyMatrix4(
+      ...parentTransforms,
+      this.localTransformation
+    );
+  }
+
+  getParentLocalTransforms() {
+    const transforms = [];
+    if (this.parent) {
+      let parent = this.parent;
+      while (parent !== undefined) {
+        transforms.unshift(parent.localTransformation);
+        parent = parent.parent;
+      }
+    }
+    return transforms;
   }
 
   updateUniforms(clipspaceMatrix) {

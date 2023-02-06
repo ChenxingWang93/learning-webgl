@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scenes/VAOs.md",
+                "file": "Scenes/Transparent objects.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scenes/VAOs.md",
+                "file": "Scenes/Transparent objects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scenes/VAOs.md",
+                "file": "Scenes/Transparent objects.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scenes/VAOs.md"
+                "file": "Scenes/Transparent objects.md"
               }
             }
           }
@@ -186,15 +186,15 @@
   },
   "active": "b4dd456c894e11b6",
   "lastOpenFiles": [
-    "Scenes/Transparent objects.md",
-    "Scenes/Drawing multiple objects.md",
-    "Scenes/VAOs.md",
     "Scenes/Scene graphs.md",
+    "Scenes/Drawing multiple objects.md",
+    "Scenes/Transparent objects.md",
+    "Scenes/VAOs.md",
+    "GLSL/Functions.md",
+    "Index.md",
+    "References.md",
     "First steps/Vertex shader.md",
     "Transformations/Local coordinates.md",
-    "First steps/Hello world WebGL.md",
-    "First steps/Shaders.md",
-    "References.md",
-    "First steps/GLSL.md"
+    "First steps/Hello world WebGL.md"
   ]
 }

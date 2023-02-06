@@ -5,7 +5,7 @@ When we are setting up a geometry in WebGL, the workflow is the following:
 ```js
 // Create a new vao 
 const vao = createVertexArray(); 
-bindVertexArray(vao); forced to use indexed elements, but we can ;) 
+bindVertexArray(vao);
 
 // For each attribute (e.g. each of normal, color, whatever):
 gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());    

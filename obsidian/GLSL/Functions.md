@@ -7,7 +7,7 @@
 
 - If c < a, returns 0.
 - If c > b, returns 1.
-- If c is contained between a and b, returns a [smooth interpolation](https://en.wikipedia.org/wiki/Smoothstep).
+- If c is contained between a and b, returns a [smooth interpolation](https://en.wikipedia.org/wiki/Smoothstep) between 0 and 1.
 
 ## clamp(a, b, c)
 
