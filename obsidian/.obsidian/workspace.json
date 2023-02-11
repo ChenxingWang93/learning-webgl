@@ -4,59 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "8762626450f7a171",
+        "id": "8ce8db9d3c9dc9af",
         "type": "tabs",
         "children": [
           {
-            "id": "1a0238ec1dea9419",
+            "id": "62df4b7ac78b8c00",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "First steps/Shaders.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e2601147798c5fdf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "First steps/Vertex shader.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b4dd456c894e11b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Scenes/Transparent objects.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "abac05d1d27fbfe4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Scenes/Scene graphs.md",
+                "file": "Lights/Point lights.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scenes/Transparent objects.md",
+                "file": "Lights/Point lights.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scenes/Transparent objects.md",
+                "file": "Lights/Point lights.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scenes/Transparent objects.md"
+                "file": "Lights/Point lights.md"
               }
             }
           }
@@ -184,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b4dd456c894e11b6",
+  "active": "62df4b7ac78b8c00",
   "lastOpenFiles": [
+    "Lights/Directional lights.md",
+    "First steps/Fragment shader.md",
+    "GLSL/Built-in Functions.md",
+    "GLSL/Introduction to GLSL.md",
     "Scenes/Scene graphs.md",
     "Scenes/Drawing multiple objects.md",
-    "Scenes/Transparent objects.md",
+    "First steps/Shaders.md",
     "Scenes/VAOs.md",
-    "GLSL/Functions.md",
-    "Index.md",
-    "References.md",
     "First steps/Vertex shader.md",
-    "Transformations/Local coordinates.md",
     "First steps/Hello world WebGL.md"
   ]
 }

@@ -13,6 +13,7 @@ void main() {
 }
 ```
 
+The color is a `vec4` of 4 floating values that need to be between 0 and 1. The fourth component is the **alpha** (transparency).
 
 **Fragment shaders** often require external data, and there are [[Shaders|3 ways to do this]]: **varyings**, **uniforms** and **textures**. 
 

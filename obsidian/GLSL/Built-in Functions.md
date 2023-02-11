@@ -14,3 +14,7 @@
 - If a < b, returns b.
 - If a > c, returns c.
 - If a is contained between b and c, returns a.
+
+## mix(a, b, c)
+
+- Returns a linear interpolation of a and b, using c as the percentage.
