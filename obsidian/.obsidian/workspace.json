@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "8ce8db9d3c9dc9af",
+        "id": "f9abb242db9b3764",
         "type": "tabs",
         "children": [
           {
-            "id": "62df4b7ac78b8c00",
+            "id": "0d4626fe9382c36c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lights/Point lights.md",
+                "file": "Geometry/Introduction to Bezier curves.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "vao",
+                "query": "iframe",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lights/Point lights.md",
+                "file": "Geometry/Introduction to Bezier curves.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lights/Point lights.md",
+                "file": "Geometry/Introduction to Bezier curves.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lights/Point lights.md"
+                "file": "Geometry/Introduction to Bezier curves.md"
               }
             }
           }
@@ -147,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "62df4b7ac78b8c00",
+  "active": "0d4626fe9382c36c",
   "lastOpenFiles": [
+    "Lights/Point lights.md",
+    "Transformations/Cameras.md",
+    "Geometry/Introduction to Bezier curves.md",
     "Lights/Directional lights.md",
     "First steps/Fragment shader.md",
     "GLSL/Built-in Functions.md",
     "GLSL/Introduction to GLSL.md",
     "Scenes/Scene graphs.md",
     "Scenes/Drawing multiple objects.md",
-    "First steps/Shaders.md",
-    "Scenes/VAOs.md",
-    "First steps/Vertex shader.md",
-    "First steps/Hello world WebGL.md"
+    "First steps/Shaders.md"
   ]
 }
