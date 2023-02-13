@@ -4,6 +4,16 @@ GLSL stands for **Graphics Library Shader Language** and is the language in whic
 
 The most common types are `float` (used very often), `int` and `bool` (used ocasionally).  It also has other types like `vec2`, `vec3` and `vec4` for vectors and `mat2`, `mat3` and `mat4` for square arrays. 
 
+We can also declare arrays like this:
+
+```c
+// Create an array of 2 elements
+float items[2];
+
+// Initialize it
+items[0] = 2.0;
+```
+
 Variables can also have **type qualifiers** preceding the types to define [[Shaders|input data]] for that shader file.
 
 ```c

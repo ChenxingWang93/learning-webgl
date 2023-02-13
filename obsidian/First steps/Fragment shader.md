@@ -75,7 +75,7 @@ void main() {
 }
 ```
 
-The data we obtain from that texture depends [[Introduction to textures|on several factors]]. The minimum procedure is the following:
+The data we obtain from that texture depends [[Loading a texture|on several factors]]. The minimum procedure is the following:
 
 ```js
 

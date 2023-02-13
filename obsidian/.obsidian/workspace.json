@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "f9abb242db9b3764",
+        "id": "b6b11f83fff925c4",
         "type": "tabs",
         "children": [
           {
-            "id": "0d4626fe9382c36c",
+            "id": "586d796cdfcbb0f0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Geometry/Introduction to Bezier curves.md",
+                "file": "Optimization/Indexed geometries.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "82bbfbab0db0a8a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Textures/Loading a texture.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "iframe",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Geometry/Introduction to Bezier curves.md",
+                "file": "Textures/Loading a texture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Geometry/Introduction to Bezier curves.md",
+                "file": "Textures/Loading a texture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Geometry/Introduction to Bezier curves.md"
+                "file": "Textures/Loading a texture.md"
               }
             }
           }
@@ -147,17 +160,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0d4626fe9382c36c",
+  "active": "82bbfbab0db0a8a2",
   "lastOpenFiles": [
-    "Lights/Point lights.md",
-    "Transformations/Cameras.md",
+    "Textures/Image effects.md",
+    "Optimization/Indexed geometries.md",
+    "Optimization/Data textures.md",
+    "Optimization/Introduction to optimization.md",
+    "Optimization/Vertex pulling.md",
     "Geometry/Introduction to Bezier curves.md",
-    "Lights/Directional lights.md",
-    "First steps/Fragment shader.md",
-    "GLSL/Built-in Functions.md",
+    "Textures/Loading a texture.md",
     "GLSL/Introduction to GLSL.md",
-    "Scenes/Scene graphs.md",
-    "Scenes/Drawing multiple objects.md",
+    "GLSL/Built-in Functions.md",
     "First steps/Shaders.md"
   ]
 }

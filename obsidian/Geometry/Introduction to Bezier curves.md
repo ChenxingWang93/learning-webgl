@@ -190,3 +190,4 @@ And it looks like this. With this post-clean up step, now we get way less points
 
 <iframe style="width: 400px; height: 300px;" src="https://webgl2fundamentals.org/webgl/lessons/resources/bezier-curve-diagram.html?maxDepth=0&showCurve=true&showDistance=true"></iframe>
 
+Now, let's see this in action. We'll create a  bowling pin mesh by spinning a bezier curve around a vertical axis, and generating all the vertices. Then, we'll define all the triangles using indices.
