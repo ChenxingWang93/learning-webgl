@@ -8,6 +8,101 @@ https://www.youtube.com/watch?v=kB0ZVUrI4Aw&list=PLjcVFFANLS5zH_PeKC6I8p0Pt1hzph
 https://simondev.teachable.com/p/glsl-shaders-from-scratch
 https://www.udemy.com/course/webgl-internals/
 
+___
+
+TODO:
+
+Geometry
+
+-   [3D Geometry - Lathe](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-geometry-lathe.html)
+-   [Loading .obj files](https://webgl2fundamentals.org/webgl/lessons/webgl-load-obj.html)
+-   [Loading .obj w .mtl files](https://webgl2fundamentals.org/webgl/lessons/webgl-load-obj-w-mtl.html)
+
+-   Textures
+
+-   [Textures](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-textures.html)
+-   [Data Textures](https://webgl2fundamentals.org/webgl/lessons/webgl-data-textures.html)
+-   [Using 2 or More Textures](https://webgl2fundamentals.org/webgl/lessons/webgl-2-textures.html)
+-   [Cross Origin Images](https://webgl2fundamentals.org/webgl/lessons/webgl-cors-permission.html)
+-   [Perspective Correct Texture Mapping](https://webgl2fundamentals.org/webgl/lessons/webgl-3d-perspective-correct-texturemapping.html)
+-   [Planar and Perspective Projection Mapping](https://webgl2fundamentals.org/webgl/lessons/webgl-planar-projection-mapping.html)
+
+-   Rendering To A Texture
+
+-   [Render to Texture](https://webgl2fundamentals.org/webgl/lessons/webgl-render-to-texture.html)
+
+-   Shadows
+
+-   [Shadows](https://webgl2fundamentals.org/webgl/lessons/webgl-shadows.html)
+
+-   Techniques
+
+-   2D
+
+-   [2D - DrawImage](https://webgl2fundamentals.org/webgl/lessons/webgl-2d-drawimage.html)
+-   [2D - Matrix Stack](https://webgl2fundamentals.org/webgl/lessons/webgl-2d-matrix-stack.html)
+-   [Sprites](https://webgl2fundamentals.org/webgl/lessons/webgl-sprites.html)
+
+-   3D
+
+-   [Cubemaps](https://webgl2fundamentals.org/webgl/lessons/webgl-cube-maps.html)
+-   [Environment maps](https://webgl2fundamentals.org/webgl/lessons/webgl-environment-maps.html)
+-   [Skyboxes](https://webgl2fundamentals.org/webgl/lessons/webgl-skybox.html)
+-   [Skinning](https://webgl2fundamentals.org/webgl/lessons/webgl-skinning.html)
+-   [Fog](https://webgl2fundamentals.org/webgl/lessons/webgl-fog.html)
+-   [Picking (clicking on stuff)](https://webgl2fundamentals.org/webgl/lessons/webgl-picking.html)
+
+-   Text
+
+-   [Text - HTML](https://webgl2fundamentals.org/webgl/lessons/webgl-text-html.html)
+-   [Text - Canvas 2D](https://webgl2fundamentals.org/webgl/lessons/webgl-text-canvas2d.html)
+-   [Text - Using a Texture](https://webgl2fundamentals.org/webgl/lessons/webgl-text-texture.html)
+-   [Text - Using a Glyph Texture](https://webgl2fundamentals.org/webgl/lessons/webgl-text-glyphs.html)
+
+-   GPGPU
+
+-   [GPGPU](https://webgl2fundamentals.org/webgl/lessons/webgl-gpgpu.html)
+
+-   Tips
+
+-   [Smallest Programs](https://webgl2fundamentals.org/webgl/lessons/webgl-smallest-programs.html)
+-   [Drawing Without Data](https://webgl2fundamentals.org/webgl/lessons/webgl-drawing-without-data.html)
+-   [Shadertoy](https://webgl2fundamentals.org/webgl/lessons/webgl-shadertoy.html)
+-   [Pulling Vertices](https://webgl2fundamentals.org/webgl/lessons/webgl-pulling-vertices.html)
+
+Optimization
+-   [Instanced Drawing](https://webgl2fundamentals.org/webgl/lessons/webgl-instanced-drawing.html)
+
+ Misc
+
+-   [Setup And Installation](https://webgl2fundamentals.org/webgl/lessons/webgl-setup-and-installation.html)
+-   [Boilerplate](https://webgl2fundamentals.org/webgl/lessons/webgl-boilerplate.html)
+-   [Resizing the Canvas](https://webgl2fundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html)
+-   [Animation](https://webgl2fundamentals.org/webgl/lessons/webgl-animation.html)
+-   [Points, Lines, and Triangles](https://webgl2fundamentals.org/webgl/lessons/webgl-points-lines-triangles.html)
+-   [Multiple Views, Multiple Canvases](https://webgl2fundamentals.org/webgl/lessons/webgl-multiple-views.html)
+-   [Visualizing the Camera](https://webgl2fundamentals.org/webgl/lessons/webgl-visualizing-the-camera.html)
+-   [WebGL2 and Alpha](https://webgl2fundamentals.org/webgl/lessons/webgl-and-alpha.html)
+-   [2D vs 3D libraries](https://webgl2fundamentals.org/webgl/lessons/webgl-2d-vs-3d-library.html)
+-   [Anti-Patterns](https://webgl2fundamentals.org/webgl/lessons/webgl-anti-patterns.html)
+-   [WebGL2 Matrices vs Math Matrices](https://webgl2fundamentals.org/webgl/lessons/webgl-matrix-vs-math.html)
+-   [Precision Issues](https://webgl2fundamentals.org/webgl/lessons/webgl-precision-issues.html)
+-   [Taking a screenshot](https://webgl2fundamentals.org/webgl/lessons/webgl-tips.html#screenshot)
+-   [Prevent the Canvas Being Cleared](https://webgl2fundamentals.org/webgl/lessons/webgl-tips.html#preservedrawingbuffer)
+-   [Get Keyboard Input From a Canvas](https://webgl2fundamentals.org/webgl/lessons/webgl-tips.html#tabindex)
+-   [Use WebGL2 as Background in HTML](https://webgl2fundamentals.org/webgl/lessons/webgl-tips.html#html-background)
+-   [Cross Platform Issues](https://webgl2fundamentals.org/webgl/lessons/webgl-cross-platform-issues.html)
+-   [Questions and Answers](https://webgl2fundamentals.org/webgl/lessons/webgl-qna.html)
+
+Reference
+
+-   [Attributes](https://webgl2fundamentals.org/webgl/lessons/webgl-attributes.html)
+-   [Texture Units](https://webgl2fundamentals.org/webgl/lessons/webgl-texture-units.html)
+-   [Framebuffers](https://webgl2fundamentals.org/webgl/lessons/webgl-framebuffers.html)
+-   [readPixels](https://webgl2fundamentals.org/webgl/lessons/webgl-readpixels.html)
+-   [References](https://webgl2fundamentals.org/webgl/lessons/webgl-references.html)
+
+___
 
 REST:
 

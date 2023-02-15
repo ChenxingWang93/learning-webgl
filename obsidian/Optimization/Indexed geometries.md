@@ -39,4 +39,4 @@ Now, in the example that we developed we can see that the cube seems very strang
 
 >There are [multiple solutions](https://stackoverflow.com/questions/1664402/how-can-i-specify-per-face-colors-when-using-indexed-vertex-arrays-in-opengl-3-x) to this issue. The most common one is to generate new vertices where we need a sharp edge. This sharp edge is called a **seam**.
 
-If we want sharp 
+If we want sharp edges and only define the vertices once we can use techniques like [[Vertex pulling|vertex pulling]].

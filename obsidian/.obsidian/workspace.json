@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Textures/Loading a texture.md",
+                "file": "References.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Textures/Loading a texture.md",
+                "file": "References.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Textures/Loading a texture.md",
+                "file": "References.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Textures/Loading a texture.md"
+                "file": "References.md"
               }
             }
           }
@@ -163,14 +163,14 @@
   "active": "82bbfbab0db0a8a2",
   "lastOpenFiles": [
     "Textures/Image effects.md",
+    "References.md",
+    "Textures/Loading a texture.md",
     "Optimization/Indexed geometries.md",
-    "Optimization/Data textures.md",
     "Optimization/Introduction to optimization.md",
+    "Optimization/Data textures.md",
     "Optimization/Vertex pulling.md",
     "Geometry/Introduction to Bezier curves.md",
-    "Textures/Loading a texture.md",
     "GLSL/Introduction to GLSL.md",
-    "GLSL/Built-in Functions.md",
-    "First steps/Shaders.md"
+    "GLSL/Built-in Functions.md"
   ]
 }

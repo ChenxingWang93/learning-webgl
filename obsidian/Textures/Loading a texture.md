@@ -1,6 +1,6 @@
 The images that we handle to WebGL so that it can draw as a part of our shaders are called **textures**. 
 
->The same way WebGL expects **clip space coordinates** when drawing geometry, it expects **texture coordinates** when reading a texture. **Texture coordinates** go from 0 to 1, regardless of the size of the texture. WebGL can also read textures using **pixel coordinates**, but it's less common.
+>The same way WebGL expects **clip space coordinates** when drawing geometry, it expects **texture coordinates** (also called **UV coordinates**) when reading a texture. **Texture coordinates** go from 0 to 1, regardless of the size of the texture. WebGL can also read textures using **pixel coordinates**, but it's less common.
 
 Texture coordinates are passed as a buffer to the vertex shader and transmitted as **varying** to the fragment shader. The idea is simple: WebGL will get the exact position of the texture per pixel by interpolating the texture coordinates per vertex. So the vertex shader looks like this:
 

@@ -116,3 +116,40 @@ function setupKernel(gl, program) {
 }
 ```
 
+This is useful for applying one effect, but what if we want to apply multiple effects on one image? One option would be having everything on the same shader, although that is not always possible. A more flexible approach is having 2 temp textures used to temporarily contain the middle-steps, and use them like a ping-pong game:
+
+```
+Original Image -> [Blur]        -> Texture 1
+Texture 1      -> [Sharpen]     -> Texture 2
+Texture 2      -> [Edge Detect] -> Texture 1
+Texture 1      -> [Blur]        -> Texture 2
+Texture 2      -> [Normal]      -> Canvas
+```
+
+To do this we need **framebuffers**. A **framebuffer** is simply a list of attachments that are accessible to the WebGL. If we attach a texture to a **framebuffer** and we select the **framebuffer**, WebGL will draw on that texture instead of the canvas.
+
+So the process is the following:
+
+1. Load the original texture
+2. Create 2 framebuffers, and attach 1 texture to each one
+3. Create an array of effects (kernels) to apply
+4. Bind the original texture to use it as a starting point
+5. For each effect:
+	1. Select one of the framebuffers (not the same as the last iteration)
+	2. Set the effect uniform
+	3. Render. The output is stored in the texture attached to the frame buffer
+	4. Bind the attached texture, so that it's used as input for the next iteration
+6. Deselect the last framebuffer
+7. Render (without framebuffers selected, the output is rendered in the canvas)
+
+Some important pointers:
+
+- We can select a framebuffer with `gl.bindFramebuffer(framebuffer)`.
+
+- We can deselect a framebuffer with `gl.bindFramebuffer(null)`.
+
+- Framebuffers only work if the data config that we set is supported. This can be checked using `gl.checkFramebufferStatus` (it should return `gl.FRAMEBUFFER_COMPLETE`).
+
+- WebGL needs to convert from **clip space** back into pixels. It does this based on the settings of `gl.viewport`. We need to call this function appropiately depending if we are rendering to a texture or to the canvas.
+
+- We will need to flip by Y axis when displaying the result of the framebuffers into the canvas, because WebGL considers framebuffers to have their origin (0,0) in the bottom left corner, which is the Y-opposite of the web viewport (top left corner). We can do this easily setting a parameter that controls if the Y axis is multiplied by -1.
