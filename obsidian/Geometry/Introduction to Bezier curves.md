@@ -1,4 +1,5 @@
 Bezier curves are one of the most common curves in computer graphics. The idea behind them is very simple. Let's imagine 4 points that define 3 segments. We can define a number between 0 and 1 called $t$ that defines a point along these 3 segments (0 being the start and 1 being the end). In other words, a **linear interpolation**.
+贝塞尔曲线与线性插值
 
 <iframe style="width: 400px; height: 300px;" src="https://webgl2fundamentals.org/webgl/lessons/resources/bezier-curve-diagram.html?maxDepth=1"></iframe>
 
